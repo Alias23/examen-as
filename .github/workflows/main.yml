@@ -1,9 +1,15 @@
-name: main
+name: CI/CD
 
 on:
   push:
     branches:
-      - maina
+      - main
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Choose the action to execute'
+        required: true
+        default: 'main'  # Opción predeterminada, puedes cambiarla
 
 jobs:
   build:
